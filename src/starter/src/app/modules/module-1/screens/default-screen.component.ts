@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+
+import { NotificationService } from '../../../core/services/notification.service';
 
 @Component({
   selector: 'app-default-screen',
@@ -19,6 +21,7 @@ export class DefaultScreenComponent {
     'https://laozaoshanghai.com'
   ];
 
+  notification = inject(NotificationService);
 
   ngOnInit() {
     // After 5 seconds, pick one URL at random and redirect
@@ -28,4 +31,8 @@ export class DefaultScreenComponent {
       window.location.href = this.externalSites[randIndex];
     }, 1000 * 5);
   }
+
+  showError() {
+    this.notification.openSnackBar();
+  } 
 }

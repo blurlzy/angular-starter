@@ -1,10 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
+// customize angular material theme
+@use '@angular/material' as mat;
+ 
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
+// Customize the entire app. Change :root to your selector if you want to scope the styles.
+:root {
+	@include mat.snack-bar-overrides((
+	//   container-color: orange,
+	//   supporting-text-color: #ed008c,
+	  button-color: #ed008c,
+	));
+ }
 
- 
+
 .larger-icon {
 	font-size: 1.1rem;
 	/* or 24px, 3em, etc. */
