@@ -24,12 +24,12 @@ export class DefaultScreenComponent {
   notification = inject(NotificationService);
 
   ngOnInit() {
-    // After 5 seconds, pick one URL at random and redirect
-    setTimeout(() => {
-      const randIndex = Math.floor(Math.random() * this.externalSites.length);
-      console.log(randIndex);
-      window.location.href = this.externalSites[randIndex];
-    }, 1000 * 5);
+    // // After 5 seconds, pick one URL at random and redirect
+    // setTimeout(() => {
+    //   const randIndex = Math.floor(Math.random() * this.externalSites.length);
+    //   console.log(randIndex);
+    //   window.location.href = this.externalSites[randIndex];
+    // }, 1000 * 5);
   }
 
   showError() {
